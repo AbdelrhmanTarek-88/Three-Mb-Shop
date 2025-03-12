@@ -1,0 +1,73 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+input:-webkit-autofill {
+  background-color: transparent !important;
+  box-shadow: 0 0 0px 1000px #f0f0f0 inset !important;
+  -webkit-text-fill-color: #000 !important;
+  border-radius: 20%;
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  body {
+    background-color: #363333;
+    color: rgb(39, 9, 9);
+  }
+} */
+@media (min-width: 1502px) {
+  .container {
+    max-width: 1552px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1265px;
+  }
+}
+
+@media (max-width: 1254px) {
+  .container {
+    max-width: 1008px;
+  }
+}
+
+@media (max-width: 999px) {
+  .container {
+    max-width: 860px;
+  }
+}
+
+@media (max-width: 757px) {
+  .container {
+    max-width: 512px;
+  }
+}
+
+@media (max-width: 509px) {
+  .container {
+    max-width: 385px;
+  }
+}
+
+@media (max-width: 381px) {
+  .container {
+    max-width: 250px;
+  }
+}
