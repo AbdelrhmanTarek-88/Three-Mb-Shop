@@ -56,11 +56,6 @@ function FlashSales() {
       swiperRef.current.navigation.update();
     }
   }, []);
-  const span = {
-    fontSize: "25px",
-    fontWeight: "bold",
-    color: "black",
-  };
   return (
     <div className="container  mt-5 position-relative">
       <div className="d-flex gap-2">
@@ -78,25 +73,16 @@ function FlashSales() {
         style={{ flexWrap: "wrap" }}
       >
         <div>
-          <div
-            className="d-flex gap-2 "
-            style={{
-              alignItems: "center",
-              fontSize: "20px",
-              color: "#dc3545",
-              flexWrap: "wrap",
-            }}
-          >
-            <h4
-              className="text-dark fs-2 fw-bold me-5"
-            >
-              Flash Sales
-            </h4>
+          <div className="d-flex flex-wrap gap-2 align-items-center fs-2 fw-bold text-danger-emphasis">
+            <h4 className="text-dark fs-2 fw-bold me-5">Flash Sales</h4>
             <div style={{ width: "300px" }}>
-              <span style={span}>{timeLeft.days}d</span> :
-              <span style={span}>{timeLeft.hours}h</span> :
-              <span style={span}>{timeLeft.minutes}m</span> :
-              <span style={span}>{timeLeft.seconds}s</span>
+              <span className="fs-3 text-dark">{timeLeft.days}d</span>
+              <span className=" mx-1">:</span>
+              <span className="fs-3 text-dark">{timeLeft.hours}h</span>
+              <span className=" mx-1">:</span>
+              <span className="fs-3 text-dark">{timeLeft.minutes}m</span>
+              <span className=" mx-1">:</span>
+              <span className="fs-3 text-dark">{timeLeft.seconds}s</span>
             </div>
           </div>
         </div>
@@ -104,14 +90,14 @@ function FlashSales() {
           <Button
             ref={prevRef}
             variant="danger"
-            className="swiper-button-custom prev-btn"
+            className="swiper-button-custom prev-btn rounded-5"
           >
             <FaChevronLeft />
           </Button>
           <Button
             ref={nextRef}
             variant="danger"
-            className="swiper-button-custom next-btn"
+            className="swiper-button-custom next-btn rounded-5"
           >
             <FaChevronRight />
           </Button>

@@ -5,7 +5,7 @@ const HeroSection = () => {
     <Container fluid>
       <Row>
         <Col xs={12} sm={{ span: 9, offset: 2}} md={{ span: 8, offset: 2 }}>
-          <Carousel fade>
+          <Carousel fade data-bs-theme="dark">
             <Carousel.Item>
               <CarouselItems
                 title={"Dual Camera 20MP"}

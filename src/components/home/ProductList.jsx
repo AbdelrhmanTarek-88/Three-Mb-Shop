@@ -49,7 +49,7 @@ function ProductList() {
               }}
               whileInView={{ x: 0, scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
             >
               <ProductCard product={product} />
             </motion.div>
