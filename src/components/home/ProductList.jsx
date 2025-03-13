@@ -38,7 +38,7 @@ function ProductList() {
           No products available.
         </Alert>
       ) : (
-        <div className="d-flex py-3 flex-wrap container-product-page column-gap-2 row-gap-4">
+        <div className="d-flex py-3 flex-wrap column-gap-2 row-gap-4">
           {products.slice(8, 20).map((product) => (
             <motion.div
               key={product.id}

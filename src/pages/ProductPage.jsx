@@ -49,7 +49,7 @@ function ProductsPage() {
             : "All Products"
         }
       />
-      <Container className="d-flex py-3  flex-wrap container-product-page column-gap-2 row-gap-4">
+      <Container className="d-flex py-3  flex-wrap column-gap-2 row-gap-4">
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <motion.div
