@@ -11,17 +11,12 @@ const CarouselItems = ({ title, description, image }) => {
   return (
     <>
       <Container className="mt-3 d-flex justify-content-end">
-        <div
-          className="w-100 d-flex justify-content-end"
-          style={{ background: "#e4e4e4" }}
-        >
-          <img
-            className="d-block"
-            src={images[image]}
-            alt={image}
-            style={{ mixBlendMode: "multiply" }}
-          />
-        </div>
+        <img
+          className="d-block w-80"
+          src={images[image]}
+          alt={image}
+          style={{ mixBlendMode: "multiply" }}
+        />
       </Container>
       <Carousel.Caption>
         <motion.h3
