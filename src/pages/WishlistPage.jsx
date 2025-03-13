@@ -12,7 +12,7 @@ const WishlistPage = () => {
   };
   return (
     <>
-      <TitleName name="Wishlist" />
+      <TitleName name="Wishlist"/>
       <Container className="mt-5">
         {wishlist.length === 0 ? (
           <>
@@ -21,7 +21,7 @@ const WishlistPage = () => {
           </>
         ) : (
           <>
-            <div className="  d-flex flex-column gap-4">
+            <div className="d-flex flex-column gap-4">
               {wishlist.map((product) => (
                 <WishlistItem
                   key={product.id}

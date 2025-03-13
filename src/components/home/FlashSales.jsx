@@ -76,13 +76,13 @@ function FlashSales() {
           <div className="d-flex flex-wrap gap-2 align-items-center fs-2 fw-bold text-danger-emphasis">
             <h4 className="text-dark fs-2 fw-bold me-5">Flash Sales</h4>
             <div style={{ width: "300px" }}>
-              <span className="fs-3 text-dark">{timeLeft.days}d</span>
-              <span className=" mx-1">:</span>
-              <span className="fs-3 text-dark">{timeLeft.hours}h</span>
-              <span className=" mx-1">:</span>
-              <span className="fs-3 text-dark">{timeLeft.minutes}m</span>
-              <span className=" mx-1">:</span>
-              <span className="fs-3 text-dark">{timeLeft.seconds}s</span>
+              <span className="fs-3">{timeLeft.days}d</span>
+              <span className="mx-1">:</span>
+              <span className="fs-3">{timeLeft.hours}h</span>
+              <span className="mx-1">:</span>
+              <span className="fs-3">{timeLeft.minutes}m</span>
+              <span className="mx-1">:</span>
+              <span className="fs-3">{timeLeft.seconds}s</span>
             </div>
           </div>
         </div>
