@@ -86,7 +86,7 @@ function FlashSales() {
             </div>
           </div>
         </div>
-        <div className="d-flex gap-2 " style={{ height: "40px" }}>
+        <div className="d-flex gap-2 me-5" style={{ height: "40px" }}>
           <Button
             ref={prevRef}
             variant="danger"
