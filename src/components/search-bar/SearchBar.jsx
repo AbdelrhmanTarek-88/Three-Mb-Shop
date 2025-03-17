@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, FormControl, Button, ListGroup } from "react-bootstrap";
-import { fetchFakeStoreProducts } from "../../services/api";
+import { 
+  // fetchFakeStoreProducts 
+  fetchProducts
+} from "../../services/api";
 import { IoSearchOutline } from "react-icons/io5";
 import styled from "styled-components";
 function SearchBar() {
@@ -17,7 +20,7 @@ function SearchBar() {
     }
     const fetchSuggestions = async () => {
       try {
-        const products = await fetchFakeStoreProducts();
+        const products = await fetchProducts();
         const filtered = products.filter((product) =>
           product.title.toLowerCase().includes(query.toLowerCase())
         );

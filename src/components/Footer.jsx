@@ -123,4 +123,11 @@ const StyledFooter = styled.div`
   h5 {
     color: #dc3545;
   }
+  a {
+    transition: 0.2s ease-in-out;
+  }
+  a:hover {
+    color: #dc3545 !important;
+    transition: 0.2s ease-in-out;
+  }
 `;

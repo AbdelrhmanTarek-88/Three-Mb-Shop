@@ -3,7 +3,12 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import InnerImageZoom from "react-inner-image-zoom";
 import { FaHeart, FaStar } from "react-icons/fa";
 import { useWishlist, useCart, useToast, useProduct } from "../state/hooks";
-import { TitleName, FeatureSection, BtnStyled } from "../components";
+import {
+  TitleName,
+  FeatureSection,
+  BtnStyled,
+  SearchBarNav,
+} from "../components";
 import styled from "styled-components";
 const ProductDetails = () => {
   const token = sessionStorage.getItem("token") || "";
@@ -38,6 +43,7 @@ const ProductDetails = () => {
   };
   return (
     <StyledWrapper>
+      <SearchBarNav />
       <TitleName name="Product Detail" />
       <Container className="mt-5">
         <Row>
@@ -49,13 +55,14 @@ const ProductDetails = () => {
           >
             <div className="product-image my-4 text-center">
               <InnerImageZoom
-                    src={product.image}
-                    alt={product.title}
-                    className="img-fluid"
-                    zoomSrc={product.image}
-                    zoomScale={2}
-                    zoomType="hover"
-                  />
+              // <img
+                src={product.image}
+                alt={product.title}
+                className="img-fluid"
+                zoomSrc={product.image}
+                zoomScale={1.5}
+                zoomType="hover"
+              />
             </div>
           </Col>
           <Col sm={12} md={5} lg={6} className="my-4">
@@ -104,7 +111,9 @@ const StyledWrapper = styled.div`
     mix-blend-mode: multiply;
     max-width: 350px;
     max-height: 400px;
-    cursor: zoom-in;
+    .iiz__img {
+      max-height: 400px;
+    }
     @media (max-width: 480px) {
       max-width: 325px;
     }
