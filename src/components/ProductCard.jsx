@@ -68,7 +68,7 @@ function ProductCard({ product }) {
           />
         </div>
         <p
-          className="title position-absolute text-dark text-capitalize text-break p-1"
+          className="title position-absolute  text-capitalize text-break p-1"
           onClick={() => Link(product.id)}
         >
           {product.title.length > 55
