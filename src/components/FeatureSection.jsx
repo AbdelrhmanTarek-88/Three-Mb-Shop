@@ -25,8 +25,8 @@ function FeatureSection() {
       <Row className="g-4">
         {features.map((feature, index) => (
           <Col key={index} md={4} className="d-flex flex-column align-items-center">
-            <div className="p-3 bg-light rounded-circle">{feature.icon}</div>
-            <h5 className="mt-3 fw-bold">{feature.title}</h5>
+            <div className="p-3 bg-light rounded-circle text-danger">{feature.icon}</div>
+            <h5 className="mt-3 fw-bold ">{feature.title}</h5>
             <p>{feature.description}</p>
           </Col>
         ))}

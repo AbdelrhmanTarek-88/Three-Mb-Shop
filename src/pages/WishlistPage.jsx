@@ -8,7 +8,7 @@ const WishlistPage = () => {
   const { showToast } = useToast();
   const moveAllToCart = () => {
     wishlist.forEach((item) => addToCart(item));
-    showToast("All Items Moved To Your Cart!");
+    showToast("All Items Moved To Your Cart!","light");
   };
   return (
     <>

@@ -40,11 +40,11 @@ const CartPage = () => {
               <Table responsive bordered>
                 <thead>
                   <tr className="text-center">
-                    <th className="header-product">Product</th>
-                    <th className="header-price">Price</th>
+                    <th>Product</th>
+                    <th>Price</th>
                     <th className="header-quantity">Quantity</th>
                     <th className="header-total">Total</th>
-                    <th className="header-remove">Remove</th>
+                    <th>Remove</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -59,7 +59,6 @@ const CartPage = () => {
                           className="me-3 m-2 "
                         />
                         <span
-                          className="text-title "
                           style={{ cursor: "pointer" }}
                           onClick={() => Link(item.id)}
                         >
@@ -142,6 +141,9 @@ const CartPage = () => {
 const StyledCartPage = styled.div`
   .header-quantity {
     min-width: 120px;
+  }
+  .header-total {
+    width: 90px;
   }
   @media (max-width: 768px) {
     .img-text-display {

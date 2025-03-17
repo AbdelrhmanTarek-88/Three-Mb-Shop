@@ -31,7 +31,7 @@ const WishlistItem = ({ product, removeFromWishlist, addToCart }) => {
         </span>
       </div>
       <span className="product-price text-center fs-5">${product.price}</span>
-      <span className="stock-status text-center fw-bold">In Stock</span>
+      <span className="stock-status bg-success text-light text-center fw-bold">In Stock</span>
       <BtnStyled onClick={handleClick} />
       <CloseButton
         onClick={() => removeFromWishlist(product.id)}
@@ -72,8 +72,6 @@ const StyledWishlistItem = styled.div`
     margin-right: 10px;
   }
   .stock-status {
-    background: #198754;
-    color: white;
     padding: 5px 10px;
     border-radius: 20px;
     width: 100px;

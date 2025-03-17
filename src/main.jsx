@@ -14,6 +14,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "react-multi-carousel/lib/styles.css";
 import "swiper/css";
 import "swiper/css/navigation";
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
 import "./assets/style/App.css";
 
 createRoot(document.getElementById("root")).render(

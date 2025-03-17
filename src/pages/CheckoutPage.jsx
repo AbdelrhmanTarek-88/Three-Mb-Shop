@@ -11,6 +11,9 @@ const CheckoutPage = () => {
   const { addOrder } = useOrder();
   const { clearCart } = useCart();
   const navigate = useNavigate();
+  const Link = (id) => {
+    navigate(`/product/${id}`);
+  };
   const [paymentMethod, setPaymentMethod] = useState("cash");
   useEffect(() => {
     if (cart.length === 0) {
@@ -55,7 +58,7 @@ const CheckoutPage = () => {
       <Container className="mt-5">
         <Row>
           <Col md={7}>
-            <h2 className="fw-bold mb-4">Billing Details</h2>
+            <h2 className="fw-bold mb-4 text-dark">Billing Details</h2>
             <Form>
               <Form.Group className="mb-3">
                 <Form.Label>Name*</Form.Label>
@@ -116,7 +119,7 @@ const CheckoutPage = () => {
             </Form>
           </Col>
           <Col md={5}>
-            <h2 className="fw-bold mb-4">Order Summary</h2>
+            <h2 className="fw-bold mb-4 text-dark">Order Summary</h2>
             <Card className="p-3 mb-3">
               {cart.length === 0 ? (
                 <p>Your cart is empty.</p>
@@ -129,18 +132,27 @@ const CheckoutPage = () => {
                       } `}
                       key={item.id}
                     >
-                      <span className="me-1">
+                      <span
+                        className="me-1"
+                        style={{ cursor: "pointer" }}
+                        onClick={() => Link(item.id)}
+                      >
                         <span className="me-2 text-secondary">{`[${
                           index + 1
                         }]`}</span>
-                        {item.title}
+                        {item.title.length > 45
+                          ? item.title.slice(
+                              0,
+                              item.title.lastIndexOf(" ", 45)
+                            ) + "..."
+                          : item.title}
                         <span className="fw-bold ms-1">
                           <IoIosClose size={25} />
                           {item.quantity}
                         </span>
                       </span>
                       <div className="text-danger fw-bold text-danger">
-                        ${item.price * item.quantity}
+                        ${(item.price * item.quantity).toFixed(2)}
                       </div>
                     </div>
                   ))}
@@ -160,7 +172,7 @@ const CheckoutPage = () => {
                 </>
               )}
             </Card>
-            <h5 className="mb-3">Payment Method</h5>
+            <h5 className="mb-3 text-dark">Payment Method</h5>
             <Form.Check
               type="radio"
               label="Bank"

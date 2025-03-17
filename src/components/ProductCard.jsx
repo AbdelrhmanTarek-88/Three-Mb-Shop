@@ -42,16 +42,16 @@ function ProductCard({ product }) {
     navigate(`/product/${id}`);
   };
   return (
-    <StyledWrapper className="card-cont">
-      <div className="card">
+    <StyledWrapper>
+      <div className="card position-relative d-flex justify-content-center align-items-center overflow-hidden">
         <span
-          className={`addToCart ${active ? "active" : ""}`}
+          className={`addToCart ${active ? "active" : ""} z-3 position-absolute text-uppercase fw-bold`}
           onClick={handleClick}
         >
           {spanText}
         </span>
         <span
-          className="wishList d-flex align-items-center justify-content-center"
+          className="wishList z-3 position-absolute bg-danger rounded-circle text-light d-flex align-items-center justify-content-center"
           onClick={() => handleClick2(product)}
         >
           {showRegular ? <FaHeart /> : <FaRegHeart />}
@@ -67,10 +67,17 @@ function ProductCard({ product }) {
             }}
           />
         </div>
-        <p className="title" onClick={() => Link(product.id)}>
-          {product.title}
+        <p
+          className="title position-absolute text-dark text-capitalize text-break p-1"
+          onClick={() => Link(product.id)}
+        >
+          {product.title.length > 55
+            ? product.title.slice(0, product.title.lastIndexOf(" ", 55)) + "..."
+            : product.title}
         </p>
-        <p className="price">$ {product.price}</p>
+        <p className="price fs-6 position-absolute text-dark-emphasis">
+          $ {product.price}
+        </p>
       </div>
     </StyledWrapper>
   );
@@ -86,10 +93,6 @@ ProductCard.propTypes = {
 export default ProductCard;
 const StyledWrapper = styled.div`
   .card {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 14.875em;
     height: 22em;
     box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
@@ -98,43 +101,30 @@ const StyledWrapper = styled.div`
     padding: 0.5em;
     padding-bottom: 3.4em;
     border-radius: 20px 20px 11px 11px;
-    overflow: hidden;
   }
   .card .addToCart {
     padding-top: 1.25em;
     padding-left: 1.25em;
-    position: absolute;
-    left: 0;
     bottom: -60px;
     background: #313538;
     color: #fff;
     height: 3.5em;
     width: 100%;
     transition: all 300ms;
-    font-weight: 600;
-    text-transform: uppercase;
-    opacity: 0;
     border-radius: 0 0 10px 10px;
     cursor: pointer;
-    z-index: 100;
     visibility: hidden;
+    opacity: 0;
   }
   .card .wishList {
-    position: absolute;
     left: -20px;
     top: 75px;
-    background: #dc3545;
-    color: #fff;
-    border-radius: 50%;
-    display: inline-block;
     width: 35px;
     height: 35px;
     font-size: 20px;
-    text-align: center;
     transition: all 300ms;
     opacity: 0;
     cursor: pointer;
-    z-index: 100;
     visibility: hidden;
   }
   .card:hover .wishList {
@@ -144,12 +134,9 @@ const StyledWrapper = styled.div`
     visibility: visible;
   }
   .card .title {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 0.9em;
-    position: absolute;
     left: 0.625em;
     top: 15.875em;
-    font-weight: 400;
     color: #000;
     cursor: pointer;
     transition: all 1s;
@@ -159,12 +146,9 @@ const StyledWrapper = styled.div`
     transition: all 1s;
   }
   .card .price {
-    font-weight: bold;
     font-size: 0.9em;
-    position: absolute;
     right: 1.625em;
     bottom: 0.3em;
-    color: #000;
   }
   .card:hover .addToCart {
     bottom: 0;
@@ -190,17 +174,17 @@ const StyledWrapper = styled.div`
     height: 100%;
     display: grid;
     place-items: center;
-    margin-bottom: 70px;
+    margin-bottom: 80px;
     border-radius: 11px;
   }
   @media (min-width: 381px) and (max-width: 509px) {
     .card {
       max-width: 10.875em;
-      height: 24em;
+      // height: 24em;
     }
-    .card .image {
-      margin-bottom: 100px;
-    }
+    // .card .image {
+    //   margin-bottom: 100px;
+    // }
     .card .image img {
       width: 80%;
     }

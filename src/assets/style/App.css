@@ -1,13 +1,8 @@
 html {
   scroll-behavior: smooth;
 }
-
 body {
   font-family: 'Poppins', sans-serif;
-}
-
-html,
-body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -19,11 +14,9 @@ input:-webkit-autofill {
   border-radius: 20%;
   overflow: hidden;
 }
-
 .main-content {
   flex: 1;
 }
-
 /* @media (prefers-color-scheme: dark) {
   body {
     background-color: #363333;

@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import InnerImageZoom from "react-inner-image-zoom";
 import { FaHeart, FaStar } from "react-icons/fa";
 import { useWishlist, useCart, useToast, useProduct } from "../state/hooks";
 import { TitleName, FeatureSection, BtnStyled } from "../components";
@@ -47,11 +48,14 @@ const ProductDetails = () => {
             className="d-flex justify-content-start align-items-start"
           >
             <div className="product-image my-4 text-center">
-              <img
-                src={product.image}
-                alt={product.title}
-                className="img-fluid"
-              />
+              <InnerImageZoom
+                    src={product.image}
+                    alt={product.title}
+                    className="img-fluid"
+                    zoomSrc={product.image}
+                    zoomScale={2}
+                    zoomType="hover"
+                  />
             </div>
           </Col>
           <Col sm={12} md={5} lg={6} className="my-4">
@@ -100,6 +104,7 @@ const StyledWrapper = styled.div`
     mix-blend-mode: multiply;
     max-width: 350px;
     max-height: 400px;
+    cursor: zoom-in;
     @media (max-width: 480px) {
       max-width: 325px;
     }

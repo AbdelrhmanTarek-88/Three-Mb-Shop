@@ -38,7 +38,7 @@ function ProductList() {
           No products available.
         </Alert>
       ) : (
-        <div className="d-flex py-3 flex-wrap column-gap-2 row-gap-4">
+        <div className="d-flex py-3 flex-wrap column-gap-2 row-gap-4 overflow-hidden">
           {products.slice(8, 20).map((product) => (
             <motion.div
               key={product.id}
@@ -49,6 +49,7 @@ function ProductList() {
               }}
               whileInView={{ x: 0, scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
+              // viewport={{ once: true }}
             >
               <ProductCard product={product} />
             </motion.div>
